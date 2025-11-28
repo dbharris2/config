@@ -1,0 +1,15 @@
+# ~/.zshrc
+
+export EDITOR='vim'
+export TZ='America/Denver'
+
+abbr -g src="source ~/.zshrc"
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(starship init zsh)"
+
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-abbr/zsh-abbr.zsh
