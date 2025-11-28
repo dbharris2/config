@@ -64,7 +64,9 @@ truncation_symbol = "…/"
 "Music" = "󰝚 "
 "Pictures" = " "
 "Developer" = "󰲋 "
-"/workspaces/kb" = "🌱 kb"
+"/workspaces" = ""
+"/kb" = "🌱 kb"
+"kernel-backend" = "kb"
 
 [git_branch]
 symbol = ""
@@ -77,15 +79,15 @@ format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
 
 [nodejs]
 disabled = false
-symbol = "🚀🐢 "
+symbol = "🚀🐢"
 style = "bg:green"
-format = '[[ $symbol($version) ](fg:crust bg:green)]($style)'
+format = '[[ $symbol ($version) ](fg:crust bg:green)]($style)'
 
 [python]
 disabled = false
 symbol = "🐍"
 style = "bg:green"
-format = '[[ $symbol(\(#$virtualenv\)) ](fg:crust bg:green)]($style)'
+format = '[[ $symbol (\(#$virtualenv\)) ](fg:crust bg:green)]($style)'
 
 [time]
 disabled = false
