@@ -30,3 +30,4 @@ abbr -a rm rm -i
 abbr -a src source ~/.config/fish/config.fish
 
 eval (starship init fish)
+zoxide init fish | source
