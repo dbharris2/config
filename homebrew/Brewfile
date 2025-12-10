@@ -1,0 +1,6 @@
+brew 'starship'
+brew 'vim'
+brew 'fish'
+brew 'sapling'
+brew 'bat'
+brew 'zoxide'
