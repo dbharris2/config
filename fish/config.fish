@@ -12,6 +12,7 @@ abbr -a graft sl graft
 abbr -a hide sl hide
 abbr -a p sl pull --rebase
 abbr -a prev sl prev
+abbr -a psh sl pushpr
 abbr -a revert sl revert
 abbr -a show sl show
 abbr -a shelve sl shelve
