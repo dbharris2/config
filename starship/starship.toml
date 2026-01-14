@@ -94,7 +94,7 @@ format = '[[ $symbol (\(#$virtualenv\)) ](fg:crust bg:green)]($style)'
 disabled = false
 time_format = "%R"
 style = "bg:lavender"
-format = '[[  $time ](fg:crust bg:lavender)]($style)'
+format = '[[ ⏱️ $time ](fg:crust bg:lavender)]($style)'
 
 [line_break]
 disabled = false
@@ -110,7 +110,7 @@ vimcmd_visual_symbol = '[❮](bold fg:yellow)'
 
 [cmd_duration]
 show_milliseconds = true
-format = " in $duration "
+format = "⏲️ $duration "
 style = "bg:lavender"
 disabled = false
 show_notifications = true
