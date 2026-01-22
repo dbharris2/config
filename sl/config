@@ -1,4 +1,8 @@
 # .sl/config
 
+[github]
+preferred_submit_command = pr
+preserve-pull-request-description = true
+
 [alias]
 pushpr = !sl push -f -t "pr$(sl log -r . --template '{github_pull_request_number}')"
