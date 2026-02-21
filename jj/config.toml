@@ -1,0 +1,35 @@
+# ~/.config/jj/config.toml
+
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
+[user]
+name = "Devon Harris"
+email = "dbharris2@gmail.com"
+
+[aliases]
+main = ["new", "main"]
+pull = ["util", "exec", "--", "sh", "-c", "jj git fetch && jj rebase -d main@origin"]
+ready = ["util", "exec", "--", "sh", "-c", "gh pr ready $(jj log -r @ -T bookmarks --no-graph)"]
+review-be = ["util", "exec", "--", "sh", "-c", "gh pr edit $(jj log -r @ -T bookmarks --no-graph) --add-reviewer 'jpsorensen-asimov,emernic,lucas-asimov'"]
+review-fe = ["util", "exec", "--", "sh", "-c", "gh pr edit $(jj log -r @ -T bookmarks --no-graph) --add-reviewer 'jpsorensen-asimov,jsangaritar,woo-asimov'"]
+stat = ["diff", "--stat"]
+submit = ["util", "exec", "--", "sh", "-c", "jj git push -c @ && gh pr create --head $(jj log -r @ --no-graph -T 'local_bookmarks') --title \"$(jj log -r @ --no-graph -T 'description.first_line()')\" --body-file .github/PULL_REQUEST_TEMPLATE.md --draft"]
+unedit = ["restore", "--from", "@-"]
+# update = ["git", "push", "-c", "@"]
+update = ["util", "exec", "--", "sh", "-c", "jj bookmark move $(jj log -r @ -T bookmarks --no-graph) --to @ && jj git push"]
+
+[template-aliases]
+# This redefines the 'author' display to use the name instead of the email
+'format_short_signature(signature)' = '''
+  label("author",
+    if(signature.email() == "dbharris2@gmail.com", "Me", signature.name())
+  )
+'''
+'format_timestamp(timestamp)' = 'timestamp.ago()'
+
+[ui]
+default-command = "log"
+log-synthetic-elided-nodes = false
+
+[templates]
+log = "builtin_log_comfortable"
